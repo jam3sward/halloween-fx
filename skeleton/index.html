@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Skeleton" />
+    <title>Skeleton</title>
+  </head>
+  <script type="text/javascript" src="script.js"></script>
+  <body>
+      <p>Skeleton</p>
+      <div id="button-container-wrapper">
+        <div class="button-wrapper">
+          <button class="control-button" id="play">
+            <img height="100%" width="auto" alt="Play Button" srcset="play.svg" fill="#000000" onclick="asyncPost('event','play')">
+          </button>
+        </div>
+  
+        <div class="button-wrapper">
+          <button class="control-button" id="up">
+            <img height="100%" width="auto" alt="Up button" srcset="up.svg" fill="#000000" onclick="asyncPost('event','up')">
+          </button>
+        </div>
+        
+        <div class="button-wrapper">
+          <button class="control-button" id="down">
+            <img height="100%" width="auto" alt="Down button" srcset="down.svg" fill="#000000" onclick="asyncPost('event','down')">
+          </button>
+        </div>
+
+        <div class="button-wrapper">
+          <button class="control-button" id="reset">
+            <img height="100%" width="auto" alt="Down button" srcset="reset.svg" fill="#000000" onclick="asyncPost('event','reset')">
+          </button>
+        </div>
+      </div>
+  </body>
+</html>
