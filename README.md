@@ -10,6 +10,11 @@ apt-get install python3-pip
 apt-get install python3-pygame
 ```
 
+Enabling pigpiod at startup:
+```
+sudo systemctl enable pigpiod
+```
+
 Launching the server:
 ```
 python3 server.py
