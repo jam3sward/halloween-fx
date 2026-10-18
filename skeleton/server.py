@@ -2,18 +2,24 @@ import http.server
 import socketserver
 from audio import Audio
 from motor import Motor
+from jaw import Jaw
 
 PORT = 8000
 
 audio = Audio()
 motor = Motor()
+jaw = Jaw()
 
 distance = 60
 armsRaised = False
 
 class CustomHandler(http.server.SimpleHTTPRequestHandler):
     def playSound(self):
+        print("start playing")
+        jaw.open()
         audio.play('growl.mp3')
+        print("finished playing")
+        jaw.close()
 
     def raiseArms(self):
         global armsRaised
@@ -45,7 +51,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
         self.wfile.write(response_message)
 
         #print(f"Received POST data: {post_data.decode('utf-8')}")
-        
+
         data = post_data.decode('utf-8')
         print(f"Command received: {data}")
         if data == 'play':
