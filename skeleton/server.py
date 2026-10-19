@@ -3,6 +3,7 @@ import socketserver
 from audio import Audio
 from motor import Motor
 from jaw import Jaw
+from time import sleep
 
 PORT = 8000
 
@@ -15,10 +16,9 @@ armsRaised = False
 
 class CustomHandler(http.server.SimpleHTTPRequestHandler):
     def playSound(self):
-        print("start playing")
-        jaw.open()
         audio.play('growl.mp3')
-        print("finished playing")
+        jaw.open()
+        sleep(2)
         jaw.close()
 
     def raiseArms(self):

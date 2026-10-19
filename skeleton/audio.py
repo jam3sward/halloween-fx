@@ -25,4 +25,4 @@ class Audio:
     def play(self, file_path: str):
         sound = pygame.mixer.Sound(file_path)
         sound.play()
-        sleep(sound.get_length())
+        #sleep(sound.get_length())
